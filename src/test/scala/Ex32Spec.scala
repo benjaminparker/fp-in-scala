@@ -3,10 +3,14 @@ import org.scalatest._
 
 class Ex32Spec extends WordSpec {
 
-  "tail" should {
+  "List obj" should {
 
-    "return the end of the list" in {
+    "return the tail of the list" in {
       List.tail(List(1,2,3,4)) shouldEqual List(2,3,4)
+    }
+
+    "set a new head on a list" in {
+      List.setHead(List(1, 2, 3, 4), 7) shouldEqual List(7, 2, 3, 4)
     }
   }
 }
