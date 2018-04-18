@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+
 sealed trait List[+A]
 
 case object Nil extends List[Nothing]
@@ -18,5 +20,14 @@ object List {
   def setHead[A](l: List[A], newH: A): List[A] = l match {
     case Nil => sys.error("cannot set head of empty list")
     case Cons(_, t) => Cons(newH, t)
+  }
+
+  @tailrec
+  def drop[A](l: List[A], n: Int): List[A] = {
+    if (n <= 0) l
+    else l match {
+      case Nil => Nil
+      case Cons(_, t) => drop(t, n - 1)
+    }
   }
 }

@@ -12,5 +12,9 @@ class Ex32Spec extends WordSpec {
     "set a new head on a list" in {
       List.setHead(List(1, 2, 3, 4), 7) shouldEqual List(7, 2, 3, 4)
     }
+
+    "drop n values from a list" in {
+      List.drop(List(1,2,3,4,5,6,7,8), 5) shouldEqual List(6,7,8)
+    }
   }
 }
