@@ -20,5 +20,9 @@ class Ex32Spec extends WordSpec {
     "drop while" in {
       List.dropWhile(List("dog", "door", "cat", "bed", "mouse"), (w: String) => w contains "d") shouldEqual List("cat", "bed", "mouse")
     }
+
+    "init" in {
+      List.init(List(1, 2, 3, 4)) shouldEqual List(1, 2, 3)
+    }
   }
 }
